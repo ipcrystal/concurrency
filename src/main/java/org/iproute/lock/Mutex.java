@@ -94,6 +94,4 @@ public class Mutex implements Lock, java.io.Serializable {
     public boolean tryLock(long timeout, TimeUnit unit) throws InterruptedException {
         return sync.tryAcquireNanos(1, unit.toNanos(timeout));
     }
-
-
 }

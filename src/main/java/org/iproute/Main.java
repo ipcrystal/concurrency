@@ -1,28 +1,53 @@
 package org.iproute;
 
+import java.util.concurrent.locks.ReentrantLock;
+
 /**
- * Main 查看字节码
+ * Main
  *
  * @author winterfell
- * @since 2021/4/16
+ * @since 2022/1/13
  */
 public class Main {
+    static ReentrantLock lock = new ReentrantLock(true);
 
-    public static void main(String[] args) {
-        Main main = new Main();
+    public static void main(String[] args) throws InterruptedException {
 
-        new Thread(main::test).start();
+        new Thread(() -> {
+            lock.lock();
 
-        new Thread(main::test2).start();
-    }
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lock.unlock();
+            }
 
-    public void test() {
-        synchronized (this) {
-            System.out.println("hello");
+        }, "hello").start();
+
+        Thread.sleep(1000);
+        System.out.println("hello world");
+
+        new Thread(() -> {
+            lock.lock();
+            try {
+                Thread.sleep(1000);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            } finally {
+                lock.unlock();
+            }
+
+        }, "word").start();
+
+        Thread.sleep(5000);
+        lock.lock();
+        try {
+            Thread.sleep(1000000);
+        } finally {
+            lock.unlock();
         }
     }
 
-    public synchronized void test2() {
-        System.out.println("hello");
-    }
 }
