@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
  * @author winterfell
  * @since 2022/2/17
  */
-public class PoolTest {
+public class ThreadPoolTest {
 
 
     public static void main(String[] args) {

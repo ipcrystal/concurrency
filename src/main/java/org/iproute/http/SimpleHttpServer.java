@@ -58,6 +58,7 @@ public class SimpleHttpServer {
 
             try {
                 reader = new BufferedReader(new InputStreamReader(socket.getInputStream()));
+
                 String header = reader.readLine();
                 // 由相对路径计算出绝对路径
                 String filePath = basePath + header.split(" ")[1];
@@ -81,16 +82,19 @@ public class SimpleHttpServer {
 
                     socket.getOutputStream().write(array, 0, array.length);
                 } else {
+                    /*
                     br = new BufferedReader(new InputStreamReader(new FileInputStream(filePath)));
                     out = new PrintWriter(socket.getOutputStream());
+                    */
+
+                    String word = "Hello World";
 
                     out.println("HTTP/1.1 200 OK");
                     out.println("Server: Molly");
-                    out.println("Content-Type: text/html; charset=UTF-8");
+                    out.println("Content-Type: text/plain");
+                    out.println("Content-Length: " + word.length());
                     out.println("");
-                    while ((line = br.readLine()) != null) {
-                        out.println(line);
-                    }
+                    out.println(word);
                 }
                 out.flush();
             } catch (Exception e) {
@@ -116,5 +120,14 @@ public class SimpleHttpServer {
         }
     }
 
+
+    public static void main(String[] args) {
+        try {
+            SimpleHttpServer.start();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+
+    }
 
 }
