@@ -28,19 +28,20 @@ public class Test010 {
 
     }
 
-}
+    public class Test010Child extends Test010 {
 
-class Test010Child extends Test010 {
-
-    /**
-     * 重入锁的另外一种情形
-     * <p>
-     * 子类重入父类的锁
-     */
-    @Override
-    synchronized void m() {
-        System.out.println("mm start ...");
-        super.m();
-        System.out.println("mm end ...");
+        /**
+         * 重入锁的另外一种情形
+         * <p>
+         * 子类重入父类的锁
+         */
+        @Override
+        synchronized void m() {
+            System.out.println("mm start ...");
+            super.m();
+            System.out.println("mm end ...");
+        }
     }
+
 }
+

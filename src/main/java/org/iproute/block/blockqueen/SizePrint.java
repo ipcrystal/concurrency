@@ -1,4 +1,4 @@
-package org.iproute.blockqueen;
+package org.iproute.block.blockqueen;
 
 import java.util.concurrent.BlockingQueue;
 
