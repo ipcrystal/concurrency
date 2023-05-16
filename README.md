@@ -1,6 +1,6 @@
 # concurrency
-Java 并发编程的艺术
 
+Java 并发编程的艺术
 
 ## reference
 
