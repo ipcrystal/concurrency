@@ -81,21 +81,21 @@ public class EventLoopGroup {
 
         // 如果线程相同，就直接执行，不走队列
         if (Thread.currentThread().getName().equals(this.executorThreads[random].getName())) {
-            log.info("[{}] same thread, direct call", description);
+            log.info("[desc: {}] same thread, direct call", description);
             try {
                 EventLoop.executeTask(task);
 
             } catch (Exception e) {
-                log.error("[{}] direct call failed ", description, e);
+                log.error("[desc: {}] direct call failed ", description, e);
             }
         }
 
         // provider
         if (this.queues[random].offer(task)) {
-            log.info("[{}] offered in queue", description);
+            log.info("[desc: {}] offered in queue", description);
             return "success";
         } else {
-            log.error("[{}] queue {} is full", description, random);
+            log.error("[desc: {}] queue {} is full", description, random);
             return "failure";
         }
     }

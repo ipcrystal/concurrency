@@ -6,13 +6,13 @@ import org.apache.commons.lang3.RandomUtils;
 import java.util.concurrent.Callable;
 
 /**
- * EventLoopMain
+ * EventLoopGroupMain
  *
  * @author zhuzhenjie
  * @since 5/7/2023
  */
 @Slf4j
-public class EventLoopMain {
+public class EventLoopGroupMain {
     static final EventLoopGroup group = new EventLoopGroup(10);
 
     public static void main(String[] args) throws InterruptedException {
@@ -34,7 +34,6 @@ public class EventLoopMain {
                 )
         );
     }
-
 
     static void groupInGroup() throws InterruptedException {
         for (int c = 0; c < 10; c++) {
