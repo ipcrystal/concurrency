@@ -1,5 +1,7 @@
 package org.iproute.block.waitnotifyqueen;
 
+import lombok.extern.slf4j.Slf4j;
+
 import java.util.LinkedList;
 
 /**
@@ -8,7 +10,8 @@ import java.util.LinkedList;
  * @author zhuzhenjie
  * @since 5/4/2023
  */
-public class WNQueen {
+@Slf4j
+public class WNQueue {
 
     private final Object lock = new Object();
     private final LinkedList<Integer> container;
@@ -19,7 +22,7 @@ public class WNQueen {
         return this.size;
     }
 
-    public WNQueen(int cap) {
+    public WNQueue(int cap) {
         this.size = 0;
         this.cap = cap;
         this.container = new LinkedList<>();
@@ -41,7 +44,8 @@ public class WNQueen {
             // 其中两个生产者都wait()了，那么，消费者只消费了一个元素
             // 两个生产者都走 if 之后的语句，那么生产出来的元素就会超过规定的 capacity
             while (this.size == this.cap) {
-                System.out.println("容器已满,等待消费");
+                // System.out.println("容器已满,等待消费");
+                log.info("容器已满,等待消费");
                 try {
                     lock.wait();
                 } catch (InterruptedException e) {
@@ -53,7 +57,8 @@ public class WNQueen {
             this.container.add(value);
             this.size++;
 
-            System.out.println("加入元素,通知消费");
+            // System.out.println("加入元素,通知消费");
+            log.info("加入元素,通知消费");
             lock.notifyAll();
         }
     }
@@ -73,7 +78,8 @@ public class WNQueen {
 
             // todo: 思考为什么用的是while 而不是if
             while (this.size == 0) {
-                System.out.println("容器已空,等待生产");
+                // System.out.println("容器已空,等待生产");
+                log.info("容器已空,等待生产");
                 try {
                     lock.wait(); // 等待生产
                 } catch (InterruptedException e) {
@@ -83,7 +89,8 @@ public class WNQueen {
 
             take = this.container.removeFirst();
             this.size--;
-            System.out.println("消费元素，通知生产");
+            // System.out.println("消费元素，通知生产");
+            log.info("消费元素，通知生产");
             lock.notifyAll();
             return take;
         }

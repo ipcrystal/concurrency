@@ -1,6 +1,8 @@
 package org.iproute.block.waitnotifyqueen;
 
-import java.util.Random;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.lang3.RandomUtils;
+
 import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
@@ -11,6 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @author zhuzhenjie
  * @since 5/4/2023
  */
+@Slf4j
 public class WNQMain {
 
     public static void main(String[] args) {
@@ -36,7 +39,7 @@ public class WNQMain {
      * @param consumeRate 消费速率 int秒 / 个
      */
     static void oneProvider_oneConsumer(int cap, int provideRate, int consumeRate) {
-        WNQueen queen = new WNQueen(cap);
+        WNQueue queen = new WNQueue(cap);
 
         Consumer consumer = new Consumer(queen, "生产者");
         Provider provider = new Provider(queen, "消费者");
@@ -57,13 +60,13 @@ public class WNQMain {
 
 
     static void twoProvider_twoConsumer() {
-        WNQueen queen = new WNQueen(10);
+        WNQueue queen = new WNQueue(10);
 
-        Consumer consumer1 = new Consumer(queen, "消费者1");
-        Consumer consumer2 = new Consumer(queen, "消费者2");
+        Consumer consumer1 = new Consumer(queen, "consumer1");
+        Consumer consumer2 = new Consumer(queen, "consumer2");
 
-        Provider provider1 = new Provider(queen, "生产者1");
-        Provider provider2 = new Provider(queen, "生产者2");
+        Provider provider1 = new Provider(queen, "provider1");
+        Provider provider2 = new Provider(queen, "provider2");
 
         SizePrint sizePrint = new SizePrint(queen);
 
@@ -82,56 +85,57 @@ public class WNQMain {
 
     }
 
+    static class Consumer implements Runnable {
+
+        private final WNQueue queen;
+        private final String name;
+
+        public Consumer(WNQueue queen, String name) {
+            this.queen = queen;
+            this.name = name;
+        }
+
+        @Override
+        public void run() {
+            int take = this.queen.take();
+            // System.out.println("消费者 " + this.name + " take value : " + take);
+            log.info("[消费者: {}] TAKE VALUE - {}", this.name, take);
+        }
+    }
+
+    static class Provider implements Runnable {
+        private final WNQueue queen;
+
+        private final String name;
+
+        public Provider(WNQueue queen, String name) {
+            this.queen = queen;
+            this.name = name;
+        }
+
+        @Override
+        public void run() {
+            int put = RandomUtils.nextInt(1000, 1_0000);
+            // System.out.println("生产者 " + this.name + " put value : " + put);
+            log.info("[生产者: {}] PUT VALUE - {}", this.name, put);
+            queen.put(put);
+        }
+    }
+
+    static class SizePrint implements Runnable {
+        private final WNQueue queue;
+
+        public SizePrint(WNQueue queue) {
+            this.queue = queue;
+        }
+
+        @Override
+        public void run() {
+            // System.out.println("block queen size is : " + queen.getSize());
+            log.info("当前队列大小为 {}", queue.getSize());
+        }
+    }
 
 }
 
 
-class Consumer implements Runnable {
-
-    private final WNQueen queen;
-    private final String name;
-
-    public Consumer(WNQueen queen, String name) {
-        this.queen = queen;
-        this.name = name;
-    }
-
-    @Override
-    public void run() {
-        int take = this.queen.take();
-        System.out.println("消费者 " + this.name + " take value : " + take);
-    }
-}
-
-class Provider implements Runnable {
-    private final WNQueen queen;
-    private final Random random;
-
-    private final String name;
-
-    public Provider(WNQueen queen, String name) {
-        this.queen = queen;
-        this.random = new Random();
-        this.name = name;
-    }
-
-    @Override
-    public void run() {
-        int put = random.nextInt();
-        System.out.println("生产者 " + this.name + " put value : " + put);
-        queen.put(put);
-    }
-}
-
-class SizePrint implements Runnable {
-    private final WNQueen queen;
-
-    public SizePrint(WNQueen queen) {
-        this.queen = queen;
-    }
-
-    @Override
-    public void run() {
-        System.out.println("block queen size is : " + queen.getSize());
-    }
-}
