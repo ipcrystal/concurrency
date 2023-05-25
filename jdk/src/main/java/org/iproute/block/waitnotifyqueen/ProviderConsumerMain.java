@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
  * @since 5/4/2023
  */
 @Slf4j
-public class WNQMain {
+public class ProviderConsumerMain {
 
     public static void main(String[] args) {
         /*

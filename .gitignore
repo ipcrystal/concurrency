@@ -2,3 +2,7 @@
 /.gradle
 /build
 *.class
+
+guava/out
+jdk/out
+learn/out
