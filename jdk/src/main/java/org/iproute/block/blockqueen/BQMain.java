@@ -21,24 +21,24 @@ public class BQMain {
         Consumer consumer = new Consumer(blockingQueue);
         SizePrint sizePrint = new SizePrint(blockingQueue);
 
-        ScheduledExecutorService excutor = Executors.newScheduledThreadPool(3);
+        ScheduledExecutorService executor = Executors.newScheduledThreadPool(3);
 
         // 延迟 0 秒， 每1秒生产一个元素
-        excutor.scheduleAtFixedRate(provider,
+        executor.scheduleAtFixedRate(provider,
                 0, 1, TimeUnit.SECONDS);
 
         // 延迟 0 秒， 每2秒消费一个元素
-        excutor.scheduleAtFixedRate(consumer,
+        executor.scheduleAtFixedRate(consumer,
                 0, 2, TimeUnit.SECONDS);
 
 
         // 延迟 0 秒， 每1秒打印队列元素的个数
-        excutor.scheduleAtFixedRate(sizePrint,
+        executor.scheduleAtFixedRate(sizePrint,
                 0, 1, TimeUnit.SECONDS);
 
         TimeUnit.SECONDS.sleep(20);
 
-        excutor.shutdown();
+        executor.shutdown();
     }
 }
 
