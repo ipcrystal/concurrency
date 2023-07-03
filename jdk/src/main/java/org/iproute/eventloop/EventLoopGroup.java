@@ -12,7 +12,11 @@ import java.util.concurrent.ConcurrentMap;
 import java.util.concurrent.FutureTask;
 
 /**
- * EventLoopGroup
+ * EventLoopGroup 生产者，产生任务
+ * <p>
+ * 1. EventLoopGroup 包含线程个数的 EventLoop <br>
+ * 2. EventLoopGroup初始化每个EventLoop的BlockQueue 并启动相应的线程
+ * 3. 事件路由的方法，把事件随机投递到EventLoop中
  *
  * @author zhuzhenjie
  * @since 5/7/2023
