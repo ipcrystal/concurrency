@@ -6,3 +6,6 @@
 guava/out
 jdk/out
 learn/out
+
+buildSrc/build
+buildSrc/.gradle
