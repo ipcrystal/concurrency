@@ -1,4 +1,6 @@
-package org.iproute.block.blockqueen;
+package org.iproute.block.blockqueue;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.Random;
 import java.util.concurrent.BlockingQueue;
@@ -9,6 +11,7 @@ import java.util.concurrent.BlockingQueue;
  * @author zhuzhenjie
  * @since 5/3/2023
  */
+@Slf4j
 public class Provider implements Runnable {
 
     private final BlockingQueue<Integer> blockingQueue;
@@ -27,7 +30,7 @@ public class Provider implements Runnable {
             System.out.println("put value is :" + value);
             blockingQueue.put(value);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            log.error("", e);
         }
     }
 }

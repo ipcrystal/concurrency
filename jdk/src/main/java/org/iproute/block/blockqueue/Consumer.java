@@ -1,4 +1,6 @@
-package org.iproute.block.blockqueen;
+package org.iproute.block.blockqueue;
+
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.BlockingQueue;
 
@@ -8,6 +10,7 @@ import java.util.concurrent.BlockingQueue;
  * @author zhuzhenjie
  * @since 5/3/2023
  */
+@Slf4j
 public class Consumer implements Runnable {
 
     private final BlockingQueue<Integer> blockingQueue;
@@ -22,7 +25,7 @@ public class Consumer implements Runnable {
             Integer take = blockingQueue.take();
             System.out.println("take value is :" + take);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            log.error("", e);
         }
     }
 }

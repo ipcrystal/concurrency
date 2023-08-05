@@ -1,4 +1,4 @@
-package org.iproute.block.waitnotifyqueen;
+package org.iproute.block.waitnotifyqueue;
 
 import lombok.extern.slf4j.Slf4j;
 
