@@ -1,19 +1,19 @@
 package org.iproute.guava.eventBus;
 
+import lombok.Getter;
+
 /**
  * Event
  *
  * @author zhuzhenjie
  * @since 5/16/2023
  */
+@Getter
 public class Event {
-    private String msg;
+    private final String msg;
 
     public Event(String msg) {
         this.msg = msg;
     }
 
-    public String getMsg() {
-        return msg;
-    }
 }

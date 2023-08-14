@@ -5,6 +5,7 @@ import com.google.common.util.concurrent.Futures;
 import com.google.common.util.concurrent.ListenableFuture;
 import com.google.common.util.concurrent.ListeningExecutorService;
 import com.google.common.util.concurrent.MoreExecutors;
+import lombok.extern.slf4j.Slf4j;
 
 import java.util.concurrent.Callable;
 import java.util.concurrent.Executors;
@@ -16,6 +17,7 @@ import java.util.concurrent.TimeUnit;
  * @author zhuzhenjie
  * @since 2023/6/12
  */
+@Slf4j
 public class LFMain2 {
 
     public static void main(String[] args) {
@@ -60,8 +62,11 @@ public class LFMain2 {
 
             @Override
             public void onFailure(Throwable t) {
-                System.out.println("onFailure");
-                System.err.println(t.getMessage());
+                // System.out.println("onFailure");
+                // System.err.println(t.getMessage());
+                log.info("onFailure");
+
+                log.error("", t);
             }
         }, executorService);
 
