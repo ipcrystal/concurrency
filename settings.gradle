@@ -1,5 +1,5 @@
 rootProject.name = 'concurrency'
 
-include("basic")
 include("jdk")
 include("guava")
+include("study")
