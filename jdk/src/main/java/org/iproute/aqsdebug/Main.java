@@ -9,21 +9,24 @@ import java.util.concurrent.TimeUnit;
  */
 public class Main {
     public static void main(String[] args) {
-        fairLockMain();
-    }
-
-    public static void fairLockMain() {
-        RtLock lock = new RtLock(true);
-        new Thread(new FairRunnable(lock, 2L, true, 10), "thread-1st").start();
-        new Thread(new FairRunnable(lock, 2L, false, 0), "thread-2nd").start();
-        new Thread(new FairRunnable(lock, 2L, false, 0), "thread-3rd").start();
-
         try {
-            TimeUnit.SECONDS.sleep(1);
+            fairLockMain();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
+    }
 
+    public static void fairLockMain() throws InterruptedException {
+        RtLock lock = new RtLock(false);
+        new Thread(new FairRunnable(lock, 10L, true, 3), "thread-1").start();
+
+        TimeUnit.SECONDS.sleep(1);
+        new Thread(new FairRunnable(lock, 5L, false, 0), "thread-2").start();
+
+        TimeUnit.SECONDS.sleep(1);
+        new Thread(new FairRunnable(lock, 5L, false, 0), "thread-3").start();
+
+        TimeUnit.SECONDS.sleep(3);
         lock.lock();
 
         try {

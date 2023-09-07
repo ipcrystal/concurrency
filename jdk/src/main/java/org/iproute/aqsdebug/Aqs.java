@@ -1,10 +1,13 @@
 package org.iproute.aqsdebug;
 
+import lombok.extern.java.Log;
 import sun.misc.Unsafe;
 
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Date;
+import java.util.Objects;
+import java.util.UUID;
 import java.util.concurrent.TimeUnit;
 import java.util.concurrent.locks.AbstractOwnableSynchronizer;
 import java.util.concurrent.locks.Condition;
@@ -340,6 +343,8 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
 
     /**
      * Creates and enqueues node for current thread and given mode.
+     * <p>
+     * 为当前线程和给定模式创建节点并将其排队
      *
      * @param mode Node.EXCLUSIVE for exclusive, Node.SHARED for shared
      * @return the new node
@@ -352,11 +357,65 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
             node.prev = pred;
             if (compareAndSetTail(pred, node)) {
                 pred.next = node;
+
+                logNodes(node, "addWaiter(Node):Node");
                 return node;
             }
         }
         enq(node);
+
+        logNodes(node, "addWaiter(Node):Node");
         return node;
+    }
+
+    // 找到头节点并打印队列
+    private static void logNodes(Node someNode, String funcDesc) {
+        if (someNode == null) {
+            System.out.println("some node is null");
+            return;
+        }
+        Node node = logFindHead(someNode);
+        String random = UUID.randomUUID().toString().substring(25);
+        System.out.println();
+        System.out.printf("********** ↓ ↓ ↓ 打印节点队列开始 ↓ ↓ ↓ ********** [ %18s ](%s) %s %n",
+                Thread.currentThread().getName(),
+                random,
+                funcDesc);
+        do {
+            String threadName = Objects.nonNull(node.thread) ? node.thread.getName() : "null";
+            int waitStatus = node.waitStatus;
+            // Node nextWater = node.nextWaiter;
+            System.out.printf("[threadName = %s; waitStatus = %s] ", threadName, logTranslateWaiteStatus(waitStatus));
+            if (node.next != null) {
+                System.out.print(" <===>  ");
+            }
+        } while ((node = node.next) != null);
+        System.out.println();
+        System.out.printf("********** ↑ ↑ ↑ 打印节点队列结束 ↑ ↑ ↑ ********** [ %18s ](%s) %s %n",
+                Thread.currentThread().getName(),
+                random,
+                funcDesc);
+        System.out.println();
+    }
+
+    private static Node logFindHead(Node someNode) {
+        return someNode.prev == null ? someNode : logFindHead(someNode.prev);
+    }
+
+    private static String logTranslateWaiteStatus(int waitStatus) {
+        if (1 == waitStatus) {
+            return waitStatus + ":CANCELLED";
+        }
+        if (-1 == waitStatus) {
+            return waitStatus + ":SIGNAL";
+        }
+        if (-2 == waitStatus) {
+            return waitStatus + ":CONDITION";
+        }
+        if (-3 == waitStatus) {
+            return waitStatus + ":PROPAGATE";
+        }
+        return String.valueOf(waitStatus);
     }
 
     /**
@@ -557,6 +616,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
              * retry to make sure it cannot acquire before parking.
              */
             compareAndSetWaitStatus(pred, ws, Node.SIGNAL);
+            logNodes(pred, "shouldParkAfterFailedAcquire ->  compareAndSetWaitStatus(pred, ws, Node.SIGNAL);");
         }
         return false;
     }
@@ -605,11 +665,19 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                     setHead(node);
                     p.next = null; // help GC
                     failed = false;
+
+                    logNodes(node, "acquireQueued -> if (p == head && tryAcquire(arg))");
+
                     return interrupted;
                 }
-                if (shouldParkAfterFailedAcquire(p, node) &&
-                        parkAndCheckInterrupt())
+
+                // parkAndCheckInterrupt() 返回的是当前线程是否 interrupted. code: return Thread.interrupted();
+                if (shouldParkAfterFailedAcquire(p, node) && parkAndCheckInterrupt()) {
+
+                    logNodes(node, "acquireQueued -> if (shouldParkAfterFailedAcquire(p, node) && parkAndCheckInterrupt())");
+
                     interrupted = true;
+                }
             }
         } finally {
             if (failed)
@@ -939,9 +1007,26 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
      *            can represent anything you like.
      */
     public final void acquire(int arg) {
-        if (!tryAcquire(arg) &&
-                acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
-            selfInterrupt();
+        // if (!tryAcquire(arg) &&
+        //         acquireQueued(addWaiter(Node.EXCLUSIVE), arg))
+        //     selfInterrupt();
+
+        boolean tryAcquire = tryAcquire(arg);
+
+        if (tryAcquire) { // tryAcquire == true
+            // do nothing
+            Logger.log("Aqs tryAcquire(arg) success");
+        } else { // !tryAcquire == true
+
+            // true if interrupted while waiting
+            boolean acquireQueued = acquireQueued(addWaiter(Node.EXCLUSIVE), arg);
+            if (acquireQueued) {  // acquireQueued == true
+                selfInterrupt();
+            }
+            // acquireQueued == true
+            // do nothing
+            Logger.log("Aqs tryAcquire(arg) failed & acquireQueued");
+        }
     }
 
     /**
@@ -1261,8 +1346,15 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
         Node t = tail; // Read fields in reverse initialization order
         Node h = head;
         Node s;
-        return h != t &&
-                ((s = h.next) == null || s.thread != Thread.currentThread());
+        // return h != t &&
+        //         ((s = h.next) == null || s.thread != Thread.currentThread());
+        // 重写
+        if (h == t){
+            return false;
+        }else {
+            s = h.next;
+            return s == null || s.thread != Thread.currentThread();
+        }
     }
 
 

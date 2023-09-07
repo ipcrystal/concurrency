@@ -143,7 +143,7 @@ public class RtLock implements Lock, java.io.Serializable {
                 if (!hasQueuedPredecessors() &&
                         compareAndSetState(0, acquires)) {
                     setExclusiveOwnerThread(current);
-                    Logger.log("当前线程 %s : FairSync.tryAcquire(int acquires) acquires = %s 拿锁成功", current.getName(), acquires);
+                    Logger.log("threadName = %s : FairSync.tryAcquire(int acquires) acquires = %s 拿锁成功", current.getName(), acquires);
                     return true;
                 }
             } else if (current == getExclusiveOwnerThread()) {
@@ -151,10 +151,10 @@ public class RtLock implements Lock, java.io.Serializable {
                 if (nextc < 0)
                     throw new Error("Maximum lock count exceeded");
                 setState(nextc);
-                Logger.log("当前线程 %s : FairSync.tryAcquire(int acquires) acquires = %s 重入成功, state = %s", current.getName(), acquires, nextc);
+                Logger.log("threadName = %s : FairSync.tryAcquire(int acquires) acquires = %s 重入成功, state = %s", current.getName(), acquires, nextc);
                 return true;
             }
-            Logger.log("当前线程 %s : FairSync.tryAcquire(int acquires) acquires = %s 拿锁失败", current.getName(), acquires);
+            Logger.log("threadName = %s : FairSync.tryAcquire(int acquires) acquires = %s 拿锁失败", current.getName(), acquires);
             return false;
         }
     }

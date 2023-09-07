@@ -18,10 +18,10 @@ public abstract class Logger {
     }
 
     public static void log(Thread thread, String format, Object... args) {
-        String curThreadName = Thread.currentThread().getName();
+        String threadName = thread.getName();
         System.out.printf("%s [ %18s ] : %s%n",
                 DF.format(new Date()),
-                curThreadName,
+                threadName,
                 String.format(format, args));
     }
 }
