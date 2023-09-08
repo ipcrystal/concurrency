@@ -66,7 +66,7 @@ public class Main {
                 }
 
                 TimeUnit.SECONDS.sleep(cost);
-                Logger.log("%s 秒后执行完任务", cost);
+                Consolas.log("%s 秒后执行完任务", cost);
             } catch (InterruptedException e) {
                 throw new RuntimeException(e);
             } finally {
@@ -76,7 +76,7 @@ public class Main {
 
         private void reLockMock(int time) {
             if (time > 0) {
-                Logger.log("RtLock锁 重入的第 %d 次", reLockTime - time + 1);
+                Consolas.log("RtLock锁 重入的第 %d 次", reLockTime - time + 1);
                 lock.lock();
                 reLockMock(time - 1);
             }

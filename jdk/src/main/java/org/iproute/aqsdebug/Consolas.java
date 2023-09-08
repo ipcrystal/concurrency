@@ -9,7 +9,7 @@ import java.util.Date;
  *
  * @author zhuzhenjie
  */
-public abstract class Logger {
+public abstract class Consolas {
 
     private final static DateFormat DF = new SimpleDateFormat("HH:mm:ss.SSS");
 

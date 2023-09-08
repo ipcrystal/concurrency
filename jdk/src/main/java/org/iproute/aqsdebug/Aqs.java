@@ -1,6 +1,5 @@
 package org.iproute.aqsdebug;
 
-import lombok.extern.java.Log;
 import sun.misc.Unsafe;
 
 import java.util.ArrayList;
@@ -1015,7 +1014,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
 
         if (tryAcquire) { // tryAcquire == true
             // do nothing
-            Logger.log("Aqs tryAcquire(arg) success");
+            Consolas.log("Aqs tryAcquire(arg) success");
         } else { // !tryAcquire == true
 
             // true if interrupted while waiting
@@ -1025,7 +1024,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
             }
             // acquireQueued == true
             // do nothing
-            Logger.log("Aqs tryAcquire(arg) failed & acquireQueued");
+            Consolas.log("Aqs tryAcquire(arg) failed & acquireQueued");
         }
     }
 
