@@ -14,7 +14,7 @@ idea 配置
 
 参考图片
 
-![](./.assets/bootclasspath_config.png)
+![bootclasspath_config.png](../.assets/jdk/bootclasspath_config.png)
 
 ## aqs
-![](./.assets/aqs.png)
+![aqs.png](../.assets/jdk/aqs.png)
