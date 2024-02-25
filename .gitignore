@@ -4,8 +4,14 @@
 *.class
 
 guava/out
+guava/build
 jdk/out
+jdk/build
 learn/out
+learn/build
+
+study/out
+study/build
 
 buildSrc/build
 buildSrc/.gradle
