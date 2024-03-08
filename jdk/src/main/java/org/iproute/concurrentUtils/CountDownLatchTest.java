@@ -8,7 +8,6 @@ import java.util.concurrent.CountDownLatch;
  * @author winterfell
  * @since 2022/2/14
  */
-@SuppressWarnings("all")
 public class CountDownLatchTest {
 
     static CountDownLatch c = new CountDownLatch(2);
@@ -19,7 +18,7 @@ public class CountDownLatchTest {
             try {
                 Thread.sleep(1000L);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             System.out.println(1);
             c.countDown();

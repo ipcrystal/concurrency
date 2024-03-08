@@ -10,14 +10,13 @@ import java.util.concurrent.Semaphore;
  * @author winterfell
  * @since 2022/2/15
  */
-@SuppressWarnings("all")
 public class SemaphoreTest {
 
     private static final int THREAD_COUNT = 100;
 
-    private static ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
+    private static final ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
 
-    private static Semaphore semaphore = new Semaphore(10);
+    private static final Semaphore semaphore = new Semaphore(10);
 
     public static void main(String[] args) {
 
@@ -28,7 +27,7 @@ public class SemaphoreTest {
                     System.out.println(Thread.currentThread().getName() + ": sava data");
                     semaphore.release();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             });
         }

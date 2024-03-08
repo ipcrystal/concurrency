@@ -10,7 +10,6 @@ import java.util.concurrent.Executors;
  * @author winterfell
  * @since 2022/2/15
  */
-@SuppressWarnings("all")
 public class ExchangerTest {
 
     private static final Exchanger<String> exgr = new Exchanger<>();
@@ -19,16 +18,17 @@ public class ExchangerTest {
 
     public static void main(String[] args) {
 
-        pool.execute(()->{
+        pool.execute(() -> {
             String a = "银行流水A";
             try {
                 exgr.exchange(a);
             } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         });
 
 
-        pool.execute(()->{
+        pool.execute(() -> {
             String b = "银行流水B";
 
             try {
@@ -36,6 +36,7 @@ public class ExchangerTest {
                 System.out.println("A 和 B 的数据是否一致: " + a_.equals(b) + ",\r\nA录入的数据是: " + a_ + "\r\nB录入的数据是: " + b);
 
             } catch (InterruptedException e) {
+                throw new RuntimeException(e);
             }
 
 

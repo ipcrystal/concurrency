@@ -8,7 +8,6 @@ import java.util.concurrent.CyclicBarrier;
  * @author winterfell
  * @since 2022/2/15
  */
-@SuppressWarnings("all")
 public class CyclicBarrierTest3 {
 
     static CyclicBarrier c = new CyclicBarrier(2);
@@ -19,6 +18,7 @@ public class CyclicBarrierTest3 {
             try {
                 c.await();
             } catch (Exception e) {
+                throw new RuntimeException(e);
             }
         });
 

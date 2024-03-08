@@ -6,7 +6,6 @@ package org.iproute.concurrentUtils;
  * @author winterfell
  * @since 2022/2/14
  */
-@SuppressWarnings("all")
 public class JoinCountDownLatch {
 
     public static void main(String[] args) throws InterruptedException {
@@ -19,7 +18,7 @@ public class JoinCountDownLatch {
             try {
                 Thread.sleep(1000L);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             System.out.println("parser2 finished");
         });

@@ -11,14 +11,13 @@ import java.util.concurrent.TimeUnit;
  * @author winterfell
  * @since 2022/2/15
  */
-@SuppressWarnings("all")
 public class SemaphoreTest2 {
 
     private static final int THREAD_COUNT = 10;
 
-    private static ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
+    private static final ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
 
-    private static Semaphore semaphore = new Semaphore(1);
+    private static final Semaphore semaphore = new Semaphore(1);
 
     public static void main(String[] args) {
 
@@ -30,7 +29,7 @@ public class SemaphoreTest2 {
                     System.out.println(Thread.currentThread().getName() + ": sava data");
                     semaphore.release();
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             });
         }
