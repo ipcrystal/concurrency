@@ -28,13 +28,11 @@ public class SimpleThreads {
                     "A kid will eat ivy too"
             };
             try {
-                for (int i = 0;
-                     i < importantInfo.length;
-                     i++) {
+                for (String s : importantInfo) {
                     // Pause for 4 seconds
                     Thread.sleep(4000);
                     // Print a message
-                    threadMessage(importantInfo[i]);
+                    threadMessage(s);
                 }
             } catch (InterruptedException e) {
                 threadMessage("I wasn't done!");
