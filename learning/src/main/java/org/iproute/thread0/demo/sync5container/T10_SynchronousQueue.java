@@ -16,7 +16,7 @@ public class T10_SynchronousQueue {
 
         new Thread(() -> {
             try {
-                for(;;){
+                for (; ; ) {
                     System.out.println(strs.take());
                 }
             } catch (InterruptedException e) {

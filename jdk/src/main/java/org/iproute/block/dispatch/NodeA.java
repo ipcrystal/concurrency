@@ -24,5 +24,4 @@ public class NodeA implements NodeId {
     }
 
 
-
 }

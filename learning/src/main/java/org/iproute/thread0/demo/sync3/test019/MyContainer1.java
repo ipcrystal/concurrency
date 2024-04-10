@@ -32,8 +32,7 @@ public class MyContainer1 {
      *
      */
 
-
-    volatile List lists = new ArrayList<>();
+    volatile List<Object> lists = new ArrayList<>();
 
     public void add(Object o) {
         lists.add(o);
@@ -53,7 +52,7 @@ public class MyContainer1 {
                 try {
                     TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
 
                 myContainer1.add(new Object());

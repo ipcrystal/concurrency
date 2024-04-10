@@ -10,7 +10,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 复习  synchronized 最原始的语义
  * <p>
  * 使用 ReentrantLock 完成同样的语义
- *
+ * <p>
  * 必须要 必须要 必须要 手动释放锁
  * 使用 synchronized 锁定的时候 如果抛出异常 锁会自动释放 但是 ReentrantLock 不会 !!!
  *

@@ -1,23 +1,22 @@
-package org.iproute.concurrentUtils;
+package org.iproute.concurrent;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
-import java.util.concurrent.TimeUnit;
 
 /**
- * SemaphoreTest2
+ * SemaphoreTest
  *
  * @author winterfell
  * @since 2022/2/15
  */
-public class SemaphoreTest2 {
+public class SemaphoreTest {
 
-    private static final int THREAD_COUNT = 10;
+    private static final int THREAD_COUNT = 100;
 
     private static final ExecutorService executor = Executors.newFixedThreadPool(THREAD_COUNT);
 
-    private static final Semaphore semaphore = new Semaphore(1);
+    private static final Semaphore semaphore = new Semaphore(10);
 
     public static void main(String[] args) {
 
@@ -25,7 +24,6 @@ public class SemaphoreTest2 {
             executor.execute(() -> {
                 try {
                     semaphore.acquire();
-                    TimeUnit.SECONDS.sleep(1);
                     System.out.println(Thread.currentThread().getName() + ": sava data");
                     semaphore.release();
                 } catch (InterruptedException e) {
@@ -34,8 +32,8 @@ public class SemaphoreTest2 {
             });
         }
 
-        System.out.println("wait for finished");
         executor.shutdown();
+
     }
 
 }

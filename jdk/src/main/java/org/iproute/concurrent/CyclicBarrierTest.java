@@ -1,37 +1,30 @@
-package org.iproute.concurrentUtils;
+package org.iproute.concurrent;
 
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CyclicBarrier;
 
 /**
- * CyclicBarrierTest2
+ * CyclicBarriedTest
  *
  * @author winterfell
  * @since 2022/2/14
  */
-public class CyclicBarrierTest2 {
+public class CyclicBarrierTest {
 
-    static CyclicBarrier c = new CyclicBarrier(2, new A());
+    static CyclicBarrier c = new CyclicBarrier(2);
 
     public static void main(String[] args) throws BrokenBarrierException, InterruptedException {
         new Thread(() -> {
-            System.out.println(1);
             try {
                 c.await();
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
+            System.out.println(1);
         }).start();
 
-        System.out.println(2);
+        // 主线程await
         c.await();
+        System.out.println(2);
     }
-
-    static class A implements Runnable {
-        @Override
-        public void run() {
-            System.out.println(3);
-        }
-    }
-
 }

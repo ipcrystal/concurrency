@@ -28,21 +28,20 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 中间绕了几下
  * <p>
- *  t2 start has lock
- *  t2 wait  lose lock
- *  t1 notify ("notify t2 to go on ..") t2 doesn't have lock and cannot go on..., but t1 has lock
- *  t1 wait  t1 lose lock and wait , t2 get lock and go on
- *  t2 notify and finish
- *      notify : notify t1 to go on ,but t1 doesn't have lock
- *      finish : t2 finished and lock was free ,and then t1 can get lock
- *  t1 get lock and go on  ...
- *
+ * t2 start has lock
+ * t2 wait  lose lock
+ * t1 notify ("notify t2 to go on ..") t2 doesn't have lock and cannot go on..., but t1 has lock
+ * t1 wait  t1 lose lock and wait , t2 get lock and go on
+ * t2 notify and finish
+ * notify : notify t1 to go on ,but t1 doesn't have lock
+ * finish : t2 finished and lock was free ,and then t1 can get lock
+ * t1 get lock and go on  ...
  *
  * @author winterfell
  */
 public class MyContainer2 {
 
-    volatile List lists = new ArrayList<>();
+    volatile List<Object> lists = new ArrayList<>();
 
     public void add(Object o) {
         lists.add(o);
@@ -67,7 +66,7 @@ public class MyContainer2 {
                         // 只需要等待一次
                         lock.wait();
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
                 System.out.println("t2结束");
@@ -84,7 +83,7 @@ public class MyContainer2 {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         new Thread(() -> {
@@ -116,7 +115,7 @@ public class MyContainer2 {
                     try {
                         TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
             }

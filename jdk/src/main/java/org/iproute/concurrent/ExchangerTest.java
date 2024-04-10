@@ -1,4 +1,4 @@
-package org.iproute.concurrentUtils;
+package org.iproute.concurrent;
 
 import java.util.concurrent.Exchanger;
 import java.util.concurrent.ExecutorService;

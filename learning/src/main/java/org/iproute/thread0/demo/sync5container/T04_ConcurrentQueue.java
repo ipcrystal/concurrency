@@ -33,7 +33,6 @@ public class T04_ConcurrentQueue {
         Deque<String> deque = new ConcurrentLinkedDeque<>();
 
 
-
     }
 
 }

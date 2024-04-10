@@ -1348,9 +1348,9 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
         // return h != t &&
         //         ((s = h.next) == null || s.thread != Thread.currentThread());
         // 重写
-        if (h == t){
+        if (h == t) {
             return false;
-        }else {
+        } else {
             s = h.next;
             return s == null || s.thread != Thread.currentThread();
         }

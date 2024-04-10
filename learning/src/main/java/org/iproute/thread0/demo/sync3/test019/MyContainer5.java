@@ -19,7 +19,7 @@ import java.util.concurrent.TimeUnit;
  */
 public class MyContainer5 {
 
-    volatile List lists = new ArrayList<>();
+    volatile List<Object> lists = new ArrayList<>();
 
     public void add(Object o) {
         lists.add(o);
@@ -42,7 +42,7 @@ public class MyContainer5 {
                 try {
                     countDownLatch.await();
                 } catch (InterruptedException ex) {
-                    ex.printStackTrace();
+                    throw new RuntimeException(ex);
                 }
             }
             System.out.println("t2结束");
@@ -52,7 +52,7 @@ public class MyContainer5 {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         new Thread(() -> {
@@ -70,7 +70,7 @@ public class MyContainer5 {
                 try {
                     TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         }, "t1").start();
