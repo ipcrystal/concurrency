@@ -63,7 +63,7 @@ public class ReentrantLock4 {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         t2.interrupt(); // 打断线程2的等待

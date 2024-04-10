@@ -28,7 +28,7 @@ public class Test011 {
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
 
             if (count == 5) {
@@ -54,7 +54,7 @@ public class Test011 {
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
 

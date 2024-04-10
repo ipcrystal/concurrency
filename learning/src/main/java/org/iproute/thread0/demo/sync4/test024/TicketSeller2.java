@@ -33,7 +33,7 @@ public class TicketSeller2 {
                     try {
                         TimeUnit.MILLISECONDS.sleep(10);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
 
                     System.out.println("销售了 - " + tickets.remove(0));

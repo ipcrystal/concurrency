@@ -17,7 +17,7 @@ public class InterruptMain {
         try {
             Thread.sleep(1_000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         System.out.println("hello world");

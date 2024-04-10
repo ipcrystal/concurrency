@@ -10,6 +10,5 @@ public class MemoryTransferMain {
     public static void main(String[] args) {
 
 
-
     }
 }

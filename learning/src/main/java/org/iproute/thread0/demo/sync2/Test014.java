@@ -39,7 +39,7 @@ public class Test014 {
                 // 让 主线程 等待 子线程 结束之后才能继续运行
                 o.join();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         });
 

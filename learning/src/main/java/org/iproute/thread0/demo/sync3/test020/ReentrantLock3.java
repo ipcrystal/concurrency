@@ -30,7 +30,7 @@ public class ReentrantLock3 {
                 System.out.println("m1 " + i);
             }
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } finally {
             lock.unlock();
         }
@@ -58,7 +58,7 @@ public class ReentrantLock3 {
             locked = lock.tryLock(5, TimeUnit.SECONDS);
             System.out.println("m2 locked = " + locked);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } finally {
             lock.unlock();
         }
@@ -73,7 +73,7 @@ public class ReentrantLock3 {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         new Thread(r::m2, "t2").start();

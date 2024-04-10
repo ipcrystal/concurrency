@@ -26,7 +26,7 @@ public class T08_TransferQueue {
             try {
                 System.out.println(strs.take());
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }).start();
 
@@ -39,7 +39,7 @@ public class T08_TransferQueue {
             try {
                 System.out.println(strs.take());
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }).start();
          */

@@ -17,7 +17,7 @@ public class ReentrantLock1 {
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             System.out.println("m1 " + i);
         }
@@ -38,7 +38,7 @@ public class ReentrantLock1 {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         new Thread(r::m2, "t2").start();

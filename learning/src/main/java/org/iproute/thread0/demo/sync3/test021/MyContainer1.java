@@ -24,7 +24,7 @@ public class MyContainer1<T> {
             try {
                 this.wait(); // 等待消费者消费
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
 
@@ -40,7 +40,7 @@ public class MyContainer1<T> {
             try {
                 this.wait(); // 等待生产者生产
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }
 
@@ -67,7 +67,7 @@ public class MyContainer1<T> {
                     try {
                         TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                     myContainer1.put(UUID.randomUUID().toString());
                 }
@@ -82,7 +82,7 @@ public class MyContainer1<T> {
                     try {
                         TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
             }, "thread-100" + i).start();

@@ -26,7 +26,7 @@ public class T05_LinkedBlockingQueue {
                     queue.put("a" + i);
                     TimeUnit.MILLISECONDS.sleep(r.nextInt(1000));
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
             }
         }, "生产者").start();
@@ -38,7 +38,7 @@ public class T05_LinkedBlockingQueue {
                         //  put 如果满了 就会等待
                         System.out.println(Thread.currentThread().getName() + " take " + queue.take());
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
             }, "消费者" + i).start();

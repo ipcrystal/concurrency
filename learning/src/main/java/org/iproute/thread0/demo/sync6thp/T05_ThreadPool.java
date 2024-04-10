@@ -18,7 +18,7 @@ public class T05_ThreadPool {
                 try {
                     TimeUnit.MILLISECONDS.sleep(500);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
                 System.out.println(Thread.currentThread().getName());
             });
@@ -37,7 +37,7 @@ public class T05_ThreadPool {
             TimeUnit.SECONDS.sleep(5);
             System.out.println("-----------------");
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         System.out.println(service.isTerminated());

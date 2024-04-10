@@ -17,7 +17,7 @@ public class T10_ScheduledPool {
             try {
                 TimeUnit.MILLISECONDS.sleep(1000);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             System.out.println(Thread.currentThread().getName());
         }, 1, 500, TimeUnit.MILLISECONDS);

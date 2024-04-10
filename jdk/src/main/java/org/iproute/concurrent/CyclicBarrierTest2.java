@@ -19,7 +19,7 @@ public class CyclicBarrierTest2 {
             try {
                 c.await();
             } catch (Exception e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }).start();
 

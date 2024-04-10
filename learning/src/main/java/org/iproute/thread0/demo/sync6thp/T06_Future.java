@@ -30,7 +30,7 @@ public class T06_Future {
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             return 9999;
         });

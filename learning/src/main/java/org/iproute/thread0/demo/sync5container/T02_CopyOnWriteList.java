@@ -48,7 +48,7 @@ public class T02_CopyOnWriteList {
             try {
                 th.join();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         });
         long s2 = System.currentTimeMillis();

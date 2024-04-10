@@ -22,7 +22,7 @@ public class ThreadLocal2 {
             try {
                 TimeUnit.SECONDS.sleep(2);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
 
             System.out.println("person's name :" + person.get().name);
@@ -32,7 +32,7 @@ public class ThreadLocal2 {
             try {
                 TimeUnit.SECONDS.sleep(1);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             person.set(new Person());
         }).start();

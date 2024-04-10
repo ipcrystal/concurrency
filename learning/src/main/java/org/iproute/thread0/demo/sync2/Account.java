@@ -23,7 +23,7 @@ public class Account {
         try {
             Thread.sleep(2000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         this.balance = balance;
@@ -43,7 +43,7 @@ public class Account {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         System.out.println(account.getBalance());
@@ -51,7 +51,7 @@ public class Account {
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         System.out.println(account.getBalance());

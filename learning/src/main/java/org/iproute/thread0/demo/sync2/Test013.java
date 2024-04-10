@@ -34,7 +34,7 @@ public class Test013 {
             try {
                 o.join();
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         });
 

@@ -16,7 +16,7 @@ public class CompletableFutureMain {
             try {
                 TimeUnit.SECONDS.sleep(3);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             return "白米饭";
         }).thenAccept(result -> {

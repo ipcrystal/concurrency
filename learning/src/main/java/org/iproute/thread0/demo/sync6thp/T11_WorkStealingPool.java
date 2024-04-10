@@ -39,7 +39,7 @@ public class T11_WorkStealingPool {
             try {
                 TimeUnit.MILLISECONDS.sleep(time);
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
             System.out.println(Thread.currentThread().getName());
         }

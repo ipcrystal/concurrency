@@ -17,7 +17,7 @@ public class MyLock {
         try {
             Thread.sleep(1000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         new Thread(() -> {
             sayHello();
@@ -30,7 +30,7 @@ public class MyLock {
             System.out.println(Thread.currentThread().getName());
             Thread.sleep(1000000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } finally {
             lock.unlock();
         }

@@ -16,7 +16,7 @@ public class Test009 {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         // 可重入
@@ -33,7 +33,7 @@ public class Test009 {
         try {
             TimeUnit.SECONDS.sleep(2);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         System.out.println("m2");
     }

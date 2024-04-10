@@ -15,7 +15,7 @@ public class Sync007_synchronized {
         try {
             Thread.sleep(10000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
         System.out.println(Thread.currentThread().getName() + " m1 end ...");
     }
@@ -26,7 +26,7 @@ public class Sync007_synchronized {
         try {
             Thread.sleep(5000);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         System.out.println(Thread.currentThread().getName() + " m2 ...");

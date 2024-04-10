@@ -32,7 +32,7 @@ public class BankWaterService implements Runnable {
                 try {
                     Thread.sleep(RandomUtils.nextLong(0, 1000));
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
 
                 int value = RandomUtils.nextInt(0, 5);
@@ -42,7 +42,7 @@ public class BankWaterService implements Runnable {
                 try {
                     c.await();
                 } catch (Exception e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
 
             });

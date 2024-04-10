@@ -35,12 +35,12 @@ public class T01_ConcurrentMap {
             });
         }
 
-        Arrays.asList(ths).forEach(o -> o.start());
+        Arrays.asList(ths).forEach(Thread::start);
 
         try {
             countDownLatch.await();
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         long end = System.currentTimeMillis();

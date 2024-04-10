@@ -5,7 +5,7 @@ package org.iproute.thread0.th;
  */
 public class VolatileVisibilitySample {
 
-    private static boolean initFlag = false;
+    private static volatile boolean initFlag = false;
 
     public static void refresh() {
         System.out.println("refresh data ...");
@@ -30,7 +30,7 @@ public class VolatileVisibilitySample {
         try {
             Thread.sleep(500);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         Thread threadB = new Thread(() -> {

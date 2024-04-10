@@ -20,7 +20,7 @@ public class T10_SynchronousQueue {
                     System.out.println(strs.take());
                 }
             } catch (InterruptedException e) {
-                e.printStackTrace();
+                throw new RuntimeException(e);
             }
         }).start();
 

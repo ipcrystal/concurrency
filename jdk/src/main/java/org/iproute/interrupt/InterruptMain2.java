@@ -31,7 +31,7 @@ class IThread extends Thread {
             Thread.sleep(2_000);
         } catch (InterruptedException e) {
             System.out.println("第二次 " + this.isInterrupted());
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         System.out.println("第三次 " + this.isInterrupted());
@@ -39,7 +39,7 @@ class IThread extends Thread {
             Thread.sleep(1_000);
         } catch (InterruptedException e) {
             System.out.println("第四次 " + this.isInterrupted());
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
     }
 }

@@ -122,7 +122,7 @@ public class SimpleHttpServer {
                     try {
                         closeable.close();
                     } catch (IOException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
             }
@@ -134,7 +134,7 @@ public class SimpleHttpServer {
         try {
             SimpleHttpServer.start();
         } catch (Exception e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
     }

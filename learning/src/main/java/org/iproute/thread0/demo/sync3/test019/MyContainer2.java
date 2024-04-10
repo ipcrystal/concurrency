@@ -107,7 +107,7 @@ public class MyContainer2 {
                         try {
                             lock.wait();
                         } catch (InterruptedException e) {
-                            e.printStackTrace();
+                            throw new RuntimeException(e);
                         }
                         */
                     }

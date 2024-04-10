@@ -36,7 +36,7 @@ public class MyContainer2<T> {
             ++count;
             consumer.signalAll();  // 通知消费者线程进行消费
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } finally {
             lock.unlock();
         }
@@ -54,7 +54,7 @@ public class MyContainer2<T> {
 
             producer.signalAll(); // 通知生产者进行生产
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         } finally {
             lock.unlock();
         }
@@ -72,7 +72,7 @@ public class MyContainer2<T> {
                     try {
                         TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
             }, "thread-" + i).start();
@@ -81,7 +81,7 @@ public class MyContainer2<T> {
         try {
             TimeUnit.SECONDS.sleep(1);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         for (int i = 0; i < 2; i++) {
@@ -91,7 +91,7 @@ public class MyContainer2<T> {
                     try {
                         TimeUnit.SECONDS.sleep(1);
                     } catch (InterruptedException e) {
-                        e.printStackTrace();
+                        throw new RuntimeException(e);
                     }
                 }
             }, "thread-100" + i).start();

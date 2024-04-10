@@ -17,7 +17,7 @@ public class Test017 {
                 try {
                     TimeUnit.SECONDS.sleep(1);
                 } catch (InterruptedException e) {
-                    e.printStackTrace();
+                    throw new RuntimeException(e);
                 }
 
                 System.out.println(Thread.currentThread().getName());
@@ -36,7 +36,7 @@ public class Test017 {
         try {
             TimeUnit.SECONDS.sleep(3);
         } catch (InterruptedException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
         }
 
         Thread t2 = new Thread(test::m, "t2");
