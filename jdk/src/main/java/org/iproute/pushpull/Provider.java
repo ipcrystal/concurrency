@@ -1,9 +1,9 @@
 package org.iproute.pushpull;
 
 /**
- * Proivder
+ * Provider
  *
  * @author zhuzhenjie
  */
-public class Proivder {
+public class Provider {
 }
