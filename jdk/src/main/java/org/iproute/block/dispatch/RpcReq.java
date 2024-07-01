@@ -3,7 +3,7 @@ package org.iproute.block.dispatch;
 /**
  * Request
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 2023-08-28
  */
 public class RpcReq {

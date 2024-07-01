@@ -12,7 +12,7 @@ import java.util.concurrent.FutureTask;
  * 2. 每个EventLoop包含一个BlockingQueue <br/>
  * 3. 每个EventLoop中的线程run方法是个 while-true 循环 ， 两个判断条件： 线程的interrupt标志位 和 队列是否为空
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/7/2023
  */
 @Slf4j

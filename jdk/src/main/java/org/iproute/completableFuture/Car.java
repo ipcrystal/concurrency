@@ -3,7 +3,7 @@ package org.iproute.completableFuture;
 /**
  * Car <a href="https://github.com/manouti/completablefuture-examples">example</a>
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/5/2023
  */
 public class Car {

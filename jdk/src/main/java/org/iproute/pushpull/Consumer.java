@@ -3,7 +3,7 @@ package org.iproute.pushpull;
 /**
  * Consumer
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class Consumer {
 }

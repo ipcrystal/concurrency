@@ -16,7 +16,7 @@ import java.util.concurrent.locks.LockSupport;
 /**
  * Aqs
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public abstract class Aqs extends AbstractOwnableSynchronizer
         implements java.io.Serializable {

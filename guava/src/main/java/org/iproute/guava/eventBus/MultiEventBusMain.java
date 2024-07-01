@@ -2,13 +2,15 @@ package org.iproute.guava.eventBus;
 
 import com.google.common.eventbus.EventBus;
 import com.google.common.eventbus.Subscribe;
+import lombok.Getter;
+import lombok.RequiredArgsConstructor;
 
 import java.util.UUID;
 
 /**
  * MultiEventBus
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/16/2023
  */
 public class MultiEventBusMain {
@@ -25,28 +27,16 @@ public class MultiEventBusMain {
 }
 
 
+@RequiredArgsConstructor
+@Getter
 class EventA {
-    private String msg;
-
-    public EventA(String msg) {
-        this.msg = msg;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
+    private final String msg;
 }
 
+@RequiredArgsConstructor
+@Getter
 class EventB {
-    private String msg;
-
-    public EventB(String msg) {
-        this.msg = msg;
-    }
-
-    public String getMsg() {
-        return msg;
-    }
+    private final String msg;
 }
 
 

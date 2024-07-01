@@ -3,7 +3,7 @@ package org.iproute.threadpool.debug;
 /**
  * MainConst
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public interface MainConst {
     int core = 1;

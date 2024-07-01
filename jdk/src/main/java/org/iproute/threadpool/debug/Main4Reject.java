@@ -12,7 +12,7 @@ import static org.iproute.threadpool.debug.MainConst.queue;
 /**
  * Main4Reject
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class Main4Reject {
 

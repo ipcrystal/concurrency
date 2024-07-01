@@ -7,7 +7,7 @@ import java.util.Date;
 /**
  * LoggerConst
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public abstract class Consolas {
 

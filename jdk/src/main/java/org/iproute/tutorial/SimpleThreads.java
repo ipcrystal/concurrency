@@ -3,7 +3,7 @@ package org.iproute.tutorial;
 /**
  * SimpleThreads <a href="https://docs.oracle.com/javase/tutorial/essential/concurrency/simple.html">...</a>
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/25/2023
  */
 public class SimpleThreads {

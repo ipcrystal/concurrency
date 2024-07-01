@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * <p>
  * 两个线程轮流打印 1 2 3 4 5....
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 @Slf4j
 public class AlternatePrinting {

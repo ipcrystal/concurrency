@@ -3,7 +3,7 @@ package org.iproute.pushpull;
 /**
  * Provider
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class Provider {
 }

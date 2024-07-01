@@ -5,7 +5,7 @@ import lombok.extern.slf4j.Slf4j;
 /**
  * SyncDeadLock
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/25/2023
  */
 @Slf4j

@@ -5,7 +5,7 @@ import com.google.common.eventbus.Subscribe;
 /**
  * EventListener
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/16/2023
  */
 public class EventListener {

@@ -3,7 +3,7 @@ package org.iproute.threadpool.debug;
 /**
  * BinaryUtils
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class BinaryUtils {
 

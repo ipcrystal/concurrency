@@ -7,7 +7,7 @@ import java.util.concurrent.BlockingQueue;
 /**
  * Consumer
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/3/2023
  */
 @Slf4j

@@ -8,7 +8,7 @@ import java.util.Map;
  * <p>
  * <a href="https://www.bilibili.com/video/BV1US421P7vt">https://www.bilibili.com/video/BV1US421P7vt</a>
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class DelegatingThreadLocal<T> extends ThreadLocal<T> {
     private static ThreadLocal<Map<DelegatingThreadLocal<Object>, Object>> holder;

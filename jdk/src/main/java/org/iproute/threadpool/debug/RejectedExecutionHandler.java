@@ -5,7 +5,7 @@ import java.util.concurrent.RejectedExecutionException;
 /**
  * RejectedExecutionHandler
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public interface RejectedExecutionHandler {
 

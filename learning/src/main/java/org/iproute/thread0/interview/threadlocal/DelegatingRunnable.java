@@ -3,7 +3,7 @@ package org.iproute.thread0.interview.threadlocal;
 /**
  * DelegatingRunnable
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class DelegatingRunnable implements Runnable {
 

@@ -5,7 +5,7 @@ import java.util.concurrent.Callable;
 /**
  * LFCallable
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/15/2023
  */
 public class LFCallable implements Callable<Integer> {

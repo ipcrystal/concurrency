@@ -11,7 +11,7 @@ import static org.iproute.threadpool.debug.MainConst.queue;
 /**
  * MainCore
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class Main1Core {
 

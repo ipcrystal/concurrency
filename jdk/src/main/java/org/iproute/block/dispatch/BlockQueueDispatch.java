@@ -6,7 +6,7 @@ import java.util.concurrent.LinkedBlockingDeque;
 /**
  * BlockQueueDispatch
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 2023-08-28
  */
 public class BlockQueueDispatch {

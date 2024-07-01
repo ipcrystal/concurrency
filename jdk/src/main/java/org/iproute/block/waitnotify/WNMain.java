@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * WNMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/4/2023
  */
 public class WNMain {

@@ -6,7 +6,7 @@ import java.util.concurrent.Executors;
 /**
  * MemoryTransferDefaultMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class MemoryTransferDefaultMain {
 

@@ -8,7 +8,7 @@ import java.util.concurrent.Callable;
 /**
  * EventLoopGroupMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/7/2023
  */
 @Slf4j

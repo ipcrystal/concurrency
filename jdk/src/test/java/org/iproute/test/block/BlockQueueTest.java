@@ -14,7 +14,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * BlockQueueTest
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 2023/8/6
  */
 public class BlockQueueTest {

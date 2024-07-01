@@ -8,7 +8,7 @@ import java.util.concurrent.locks.Lock;
 /**
  * RtLocak
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class RtLock implements Lock, java.io.Serializable {
     private static final long serialVersionUID = 7373984872572414699L;

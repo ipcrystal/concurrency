@@ -8,7 +8,7 @@ import java.util.concurrent.Future;
 /**
  * FutureMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/5/2023
  */
 public class FutureMain {

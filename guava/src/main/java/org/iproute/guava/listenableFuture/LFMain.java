@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * LFMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/15/2023
  */
 @Slf4j

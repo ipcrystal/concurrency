@@ -3,7 +3,7 @@ package org.iproute.interrupt;
 /**
  * InterruptMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/5/2023
  */
 public class InterruptMain2 {

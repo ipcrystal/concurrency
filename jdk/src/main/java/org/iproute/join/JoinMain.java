@@ -3,7 +3,7 @@ package org.iproute.join;
 /**
  * JoinMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/25/2023
  */
 public class JoinMain {

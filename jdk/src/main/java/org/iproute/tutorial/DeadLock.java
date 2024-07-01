@@ -3,7 +3,7 @@ package org.iproute.tutorial;
 /**
  * DeadLock
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/25/2023
  */
 public class DeadLock {

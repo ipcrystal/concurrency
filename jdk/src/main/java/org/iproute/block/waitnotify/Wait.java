@@ -3,7 +3,7 @@ package org.iproute.block.waitnotify;
 /**
  * Wait
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/3/2023
  */
 public class Wait implements Runnable {

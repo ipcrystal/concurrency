@@ -10,7 +10,7 @@ import static org.iproute.threadpool.debug.MainConst.queue;
 /**
  * MainQueue
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class Main2Queue {
 

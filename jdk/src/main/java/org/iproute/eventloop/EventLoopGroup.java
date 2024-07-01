@@ -18,7 +18,7 @@ import java.util.concurrent.FutureTask;
  * 2. EventLoopGroup初始化每个EventLoop的BlockQueue 并启动相应的线程
  * 3. 事件路由的方法，把事件随机投递到EventLoop中
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/7/2023
  */
 @Slf4j

@@ -7,7 +7,7 @@ import java.util.UUID;
 /**
  * EventBusMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/16/2023
  */
 public class EventBusMain {

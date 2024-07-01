@@ -3,7 +3,7 @@ package org.iproute.pushpull;
 /**
  * Queue
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class Queue<T> {
 

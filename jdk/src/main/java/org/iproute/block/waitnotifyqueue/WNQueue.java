@@ -8,7 +8,7 @@ import java.util.LinkedList;
 /**
  * 利用wait / notifyAll 实现生产者消费者安全
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/4/2023
  */
 @Slf4j

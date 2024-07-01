@@ -3,7 +3,7 @@ package org.iproute.block.dispatch;
 /**
  * NodeId
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 2023-08-28
  */
 public interface NodeId {

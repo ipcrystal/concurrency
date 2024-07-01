@@ -3,7 +3,7 @@ package org.iproute.thread0.interview.threadlocal;
 /**
  * MemoryTransferMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class MemoryTransferMain {
 

@@ -7,7 +7,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * RtLockConditionMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class RtLockConditionMain {
 

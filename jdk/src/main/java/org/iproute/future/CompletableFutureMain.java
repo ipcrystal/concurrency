@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * CompletableFutureMain
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  * @since 5/5/2023
  */
 public class CompletableFutureMain {

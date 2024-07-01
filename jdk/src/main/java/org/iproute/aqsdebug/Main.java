@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * Main
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class Main {
     public static void main(String[] args) {

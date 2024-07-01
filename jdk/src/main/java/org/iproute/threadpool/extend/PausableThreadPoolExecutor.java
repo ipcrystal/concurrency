@@ -11,7 +11,7 @@ import java.util.concurrent.locks.ReentrantLock;
 /**
  * PausableThreadPoolExecutor
  *
- * @author zhuzhenjie
+ * @author tech@intellij.io
  */
 public class PausableThreadPoolExecutor extends ThreadPoolExecutor {
 
