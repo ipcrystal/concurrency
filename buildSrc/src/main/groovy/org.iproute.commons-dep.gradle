@@ -34,7 +34,5 @@ dependencies {
 test {
     useJUnitPlatform {
         includeEngines("junit-jupiter")
-        // includeEngines("junit-vintage")
-        // excludeEngines("junit-jupiter")
     }
 }
