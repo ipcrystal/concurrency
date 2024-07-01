@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T03_Callable {
 

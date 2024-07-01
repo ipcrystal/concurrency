@@ -7,7 +7,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * DefaultThreadPool
  *
  * @param <Job> the type parameter
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022 /2/15
  */
 public class DefaultThreadPool<Job extends Runnable> implements ThreadPool<Job> {

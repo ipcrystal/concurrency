@@ -1,7 +1,7 @@
 package org.iproute.thread0.demo.sync6thp;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T13_ThreadPoolExecutor {
 

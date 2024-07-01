@@ -13,7 +13,7 @@ import java.util.concurrent.CopyOnWriteArrayList;
  * 实际中的例子：
  * 事件监听器
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T02_CopyOnWriteList {
 

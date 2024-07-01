@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
  * 本例用于m1锁定this，只有m1执行完毕的时候 m2才可以执行
  * 复习  synchronized 最原始的语义
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class ReentrantLock1 {
 

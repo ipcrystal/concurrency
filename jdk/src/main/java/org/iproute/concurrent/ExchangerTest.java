@@ -7,7 +7,7 @@ import java.util.concurrent.Executors;
 /**
  * Exchanger 线程间交换数据
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/15
  */
 public class ExchangerTest {

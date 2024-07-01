@@ -14,7 +14,7 @@ import java.util.concurrent.LinkedTransferQueue;
  * <p>
  * 更高的并发
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T08_TransferQueue {
 

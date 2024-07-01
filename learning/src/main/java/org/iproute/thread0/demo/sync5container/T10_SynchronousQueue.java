@@ -7,7 +7,7 @@ import java.util.concurrent.SynchronousQueue;
  * 容量为0
  * 生产者生产(put)的任何内容，消费者必须立刻消费
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T10_SynchronousQueue {
 

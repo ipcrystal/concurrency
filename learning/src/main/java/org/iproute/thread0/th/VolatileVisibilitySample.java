@@ -1,7 +1,7 @@
 package org.iproute.thread0.th;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class VolatileVisibilitySample {
 

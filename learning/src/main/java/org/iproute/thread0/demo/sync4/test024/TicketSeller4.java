@@ -4,7 +4,7 @@ import java.util.Queue;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class TicketSeller4 {
 

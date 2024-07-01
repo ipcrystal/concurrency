@@ -5,7 +5,7 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T05_ThreadPool {
 

@@ -16,7 +16,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * <p>
  * 在使用 ReentrantLock 可以进行 尝试锁定 "tryLock" 这样无法锁定，或者在指定的时间内无法锁定，线程可以决定是否继续等待
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class ReentrantLock3 {
 

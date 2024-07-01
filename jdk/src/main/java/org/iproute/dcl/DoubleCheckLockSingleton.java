@@ -3,7 +3,7 @@ package org.iproute.dcl;
 /**
  * DoubleCheckLockSingleton
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/8
  */
 public class DoubleCheckLockSingleton {

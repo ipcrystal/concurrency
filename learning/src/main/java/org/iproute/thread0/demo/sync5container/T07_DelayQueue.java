@@ -17,7 +17,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 可以用来做定时任务
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T07_DelayQueue {
 

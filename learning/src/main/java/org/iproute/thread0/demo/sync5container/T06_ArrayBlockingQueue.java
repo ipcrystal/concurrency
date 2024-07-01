@@ -7,7 +7,7 @@ import java.util.concurrent.BlockingQueue;
 /**
  * 有界阻塞队列
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T06_ArrayBlockingQueue {
 

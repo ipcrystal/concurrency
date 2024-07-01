@@ -6,7 +6,7 @@ package org.iproute.thread0.demo.sync;
  * <p>
  * synchronized 是互斥锁
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 @SuppressWarnings("all")
 public class Sync001_synchronized {

@@ -8,7 +8,7 @@ import java.util.concurrent.FutureTask;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T06_Future {
 

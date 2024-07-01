@@ -7,7 +7,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 也就是说 synchronized 获得的锁是 可重入的
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test009 {
 

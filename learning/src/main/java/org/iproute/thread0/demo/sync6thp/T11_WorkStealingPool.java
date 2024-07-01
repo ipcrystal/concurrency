@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 工作窃取，本质是由 ForkJoin实现的
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T11_WorkStealingPool {
 

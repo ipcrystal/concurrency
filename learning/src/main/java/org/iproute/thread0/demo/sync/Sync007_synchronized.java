@@ -3,7 +3,7 @@ package org.iproute.thread0.demo.sync;
 /**
  * 同步方法和非同步方法是否可以同时调用
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Sync007_synchronized {
 

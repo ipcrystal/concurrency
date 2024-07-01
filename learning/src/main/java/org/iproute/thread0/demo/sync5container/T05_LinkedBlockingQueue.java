@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * 使用 LinkedBlockingDeque 实现的生产消费
  * 无界队列
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T05_LinkedBlockingQueue {
 

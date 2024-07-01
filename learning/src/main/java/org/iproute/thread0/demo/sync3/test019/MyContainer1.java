@@ -11,7 +11,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 分析下面这个程序是否能完成功能
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class MyContainer1 {
 

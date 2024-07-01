@@ -8,7 +8,7 @@ import java.util.concurrent.ConcurrentLinkedQueue;
 /**
  * 并发容器中用的很多的东西
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T04_ConcurrentQueue {
 

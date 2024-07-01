@@ -37,7 +37,7 @@ import java.util.concurrent.TimeUnit;
  * finish : t2 finished and lock was free ,and then t1 can get lock
  * t1 get lock and go on  ...
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class MyContainer2 {
 

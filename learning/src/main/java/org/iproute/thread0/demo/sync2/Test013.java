@@ -6,7 +6,7 @@ import java.util.List;
 /**
  * volatile 不能保证原子性
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test013 {
 

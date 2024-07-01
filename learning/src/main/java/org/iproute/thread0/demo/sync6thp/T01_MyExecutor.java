@@ -5,7 +5,7 @@ import java.util.concurrent.Executor;
 /**
  * Executor定义一个接口，一种规范，比较普通
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T01_MyExecutor implements Executor {
 

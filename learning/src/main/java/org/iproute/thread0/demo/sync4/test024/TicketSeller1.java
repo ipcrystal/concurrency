@@ -11,7 +11,7 @@ import java.util.List;
  * 分析下面程序可能会出什么问题
  * 重复销售？ 超量销售？
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class TicketSeller1 {
 

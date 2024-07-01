@@ -16,7 +16,7 @@ import java.nio.file.Paths;
 /**
  * 一个基于线程池技术的简单的http 服务器
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/15
  */
 public class SimpleHttpServer {

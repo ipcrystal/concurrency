@@ -1,7 +1,7 @@
 package org.iproute.thread0.demo.sync4.test023;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Singleton {
 

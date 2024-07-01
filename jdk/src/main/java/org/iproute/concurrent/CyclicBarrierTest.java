@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 /**
  * CyclicBarriedTest
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/14
  */
 public class CyclicBarrierTest {

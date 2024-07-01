@@ -1,7 +1,7 @@
 package org.iproute.thread0.demo.sync;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Sync003_synchronized {
 

@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 可见性
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test012 {
 

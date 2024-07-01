@@ -5,7 +5,7 @@ import java.util.concurrent.CountDownLatch;
 /**
  * CountDownLatchTest
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/14
  */
 public class CountDownLatchTest {

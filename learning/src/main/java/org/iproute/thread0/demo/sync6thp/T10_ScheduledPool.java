@@ -5,7 +5,7 @@ import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T10_ScheduledPool {
 

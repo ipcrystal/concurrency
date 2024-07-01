@@ -3,7 +3,7 @@ package org.iproute.concurrent;
 /**
  * JoinCountDownLatch
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/14
  */
 public class JoinCountDownLatch {

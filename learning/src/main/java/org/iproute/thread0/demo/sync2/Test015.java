@@ -10,7 +10,7 @@ import java.util.concurrent.atomic.AtomicInteger;
  * AtomXXX 本身方法是原子性的 但是不能保证多少方法连续调用是原子性的
  * （原子性的方法 + 原子性的方法 ） 不构成 一套完整的原子性的方法 （见缝插针）
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test015 {
 

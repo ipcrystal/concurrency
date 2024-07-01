@@ -3,7 +3,7 @@ package org.iproute.thread0.demo.sync2;
 import java.util.concurrent.TimeUnit;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test017 {
 

@@ -8,7 +8,7 @@ import java.util.concurrent.RecursiveAction;
 import java.util.concurrent.RecursiveTask;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T12_ForkJoinPool {
     static int[] nums = new int[1000000];

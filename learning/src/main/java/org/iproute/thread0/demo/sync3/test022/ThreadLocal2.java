@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 运行下面的程序理解
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class ThreadLocal2 {
 

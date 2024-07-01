@@ -14,7 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * <p>
  * 使用 Lock 和 Condition来实现
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class MyContainer2<T> {
     final private LinkedList<T> lists = new LinkedList<>();

@@ -4,7 +4,7 @@ package org.iproute.threadpool;
  * ThreadPool
  *
  * @param <Job> the type parameter
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022 /2/15
  */
 public interface ThreadPool<Job extends Runnable> {

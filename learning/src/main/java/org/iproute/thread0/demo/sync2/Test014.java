@@ -10,7 +10,7 @@ import java.util.List;
  * synchronized 既保证可见性 也保证原子性
  * volatile 保证了可见性 不保证原子性
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test014 {
 

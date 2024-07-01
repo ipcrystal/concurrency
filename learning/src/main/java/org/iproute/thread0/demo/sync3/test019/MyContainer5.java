@@ -15,7 +15,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 类似计算机操作系统中的信号量
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class MyContainer5 {
 

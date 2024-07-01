@@ -9,7 +9,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * 容易产生脏读问题 （dirty read）
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Account {
 

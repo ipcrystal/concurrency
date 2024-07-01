@@ -3,7 +3,7 @@ package org.iproute.thread0.demo.sync;
 /**
  * 分析一下这个程序的输出
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Sync006_synchronized implements Runnable {
 

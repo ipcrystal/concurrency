@@ -14,7 +14,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * 必须要 必须要 必须要 手动释放锁
  * 使用 synchronized 锁定的时候 如果抛出异常 锁会自动释放 但是 ReentrantLock 不会 !!!
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class ReentrantLock2 {
 

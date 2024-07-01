@@ -7,7 +7,7 @@ package org.iproute.thread0.demo.sync2;
  * <p>
  * 不建议用字符串常量作为锁的对象
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test018 {
 

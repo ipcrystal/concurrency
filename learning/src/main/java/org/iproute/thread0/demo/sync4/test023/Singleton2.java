@@ -3,7 +3,7 @@ package org.iproute.thread0.demo.sync4.test023;
 /**
  * 静态内部类 也能保证线程安全
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Singleton2 {
 

@@ -10,7 +10,7 @@ import java.util.concurrent.Executors;
 /**
  * CyclicBarrier模拟银行流水
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/14
  */
 @SuppressWarnings("all")

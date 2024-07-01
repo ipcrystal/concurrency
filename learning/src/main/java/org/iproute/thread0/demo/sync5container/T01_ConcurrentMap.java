@@ -7,7 +7,7 @@ import java.util.Random;
 import java.util.concurrent.CountDownLatch;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T01_ConcurrentMap {
 

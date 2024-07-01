@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * ThreadLocal 线程局部变量
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class ThreadLocal1 {
 

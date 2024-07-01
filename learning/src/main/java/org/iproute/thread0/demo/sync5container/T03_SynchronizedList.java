@@ -5,7 +5,7 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class T03_SynchronizedList {
 

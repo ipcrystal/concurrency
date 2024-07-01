@@ -12,7 +12,7 @@ import java.util.concurrent.TimeUnit;
  * <p>
  * synchronized wait notify notifyAll 这几个一起使用
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class MyContainer1<T> {
     final private LinkedList<T> lists = new LinkedList<>();

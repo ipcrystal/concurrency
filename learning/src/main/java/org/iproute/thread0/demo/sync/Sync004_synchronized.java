@@ -3,7 +3,7 @@ package org.iproute.thread0.demo.sync;
 /**
  * synchronized 如果用在静态方法上，相当与锁定当前对象的 Class对象
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Sync004_synchronized {
 

@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * 细粒度的锁 效率高于 粗粒度的锁
  *
- * @author winterfell
+ * @author tech@intellij.io
  */
 public class Test016 {
 

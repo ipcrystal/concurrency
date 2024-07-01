@@ -5,7 +5,7 @@ import java.util.concurrent.TimeUnit;
 /**
  * PoolTest
  *
- * @author winterfell
+ * @author tech@intellij.io
  * @since 2022/2/17
  */
 public class ThreadPoolTest {
