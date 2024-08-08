@@ -1,5 +1,5 @@
 plugins {
-    id 'org.iproute.commons-dep'
+    id("org.iproute.commons-dep")
 }
 
 java {

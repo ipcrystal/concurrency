@@ -1,11 +1,12 @@
 plugins {
-    id 'org.iproute.commons-dep'
+    id("org.iproute.commons-dep")
 }
 
 java {
     sourceCompatibility = JavaVersion.VERSION_1_8
     targetCompatibility = JavaVersion.VERSION_1_8
 }
-dependencies {
 
+dependencies {
+    implementation("com.google.guava:guava:33.0.0-jre")
 }

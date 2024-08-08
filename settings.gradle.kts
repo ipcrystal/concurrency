@@ -1,4 +1,4 @@
-rootProject.name = 'concurrency'
+rootProject.name = "concurrency"
 
 include("jdk")
 include("guava")

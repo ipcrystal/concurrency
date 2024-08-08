@@ -1,5 +1,5 @@
 plugins {
-    id 'org.iproute.commons-dep'
+    id("org.iproute.commons-dep")
 }
 
 java {
@@ -9,6 +9,6 @@ java {
 
 dependencies {
     // https://mvnrepository.com/artifact/com.lmax/disruptor
-    implementation 'com.lmax:disruptor:3.4.2'
+    implementation("com.lmax:disruptor:3.4.2")
 
 }
