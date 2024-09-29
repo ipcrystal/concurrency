@@ -3,11 +3,11 @@ package org.iproute.aqsdebug;
 import java.util.concurrent.TimeUnit;
 
 /**
- * Main
+ * AqsDebugMain
  *
  * @author tech@intellij.io
  */
-public class Main {
+public class AqsDebugMain {
     public static void main(String[] args) {
         try {
             fairLockMain();

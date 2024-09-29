@@ -488,7 +488,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                         continue;            // loop to recheck cases
                     unparkSuccessor(h);
                 } else if (ws == 0 &&
-                        !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
+                           !compareAndSetWaitStatus(h, 0, Node.PROPAGATE))
                     continue;                // loop on failed CAS
             }
             if (h == head)                   // loop if head changed
@@ -524,7 +524,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
          * anyway.
          */
         if (propagate > 0 || h == null || h.waitStatus < 0 ||
-                (h = head) == null || h.waitStatus < 0) {
+            (h = head) == null || h.waitStatus < 0) {
             Node s = node.next;
             if (s == null || s.isShared())
                 doReleaseShared();
@@ -568,9 +568,9 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
             // so it will get one. Otherwise wake it up to propagate.
             int ws;
             if (pred != head &&
-                    ((ws = pred.waitStatus) == Node.SIGNAL ||
-                            (ws <= 0 && compareAndSetWaitStatus(pred, ws, Node.SIGNAL))) &&
-                    pred.thread != null) {
+                ((ws = pred.waitStatus) == Node.SIGNAL ||
+                 (ws <= 0 && compareAndSetWaitStatus(pred, ws, Node.SIGNAL))) &&
+                pred.thread != null) {
                 Node next = node.next;
                 if (next != null && next.waitStatus <= 0)
                     compareAndSetNext(pred, predNext, next);
@@ -703,7 +703,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                     return;
                 }
                 if (shouldParkAfterFailedAcquire(p, node) &&
-                        parkAndCheckInterrupt())
+                    parkAndCheckInterrupt())
                     throw new InterruptedException();
             }
         } finally {
@@ -739,7 +739,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                 if (nanosTimeout <= 0L)
                     return false;
                 if (shouldParkAfterFailedAcquire(p, node) &&
-                        nanosTimeout > spinForTimeoutThreshold)
+                    nanosTimeout > spinForTimeoutThreshold)
                     LockSupport.parkNanos(this, nanosTimeout);
                 if (Thread.interrupted())
                     throw new InterruptedException();
@@ -774,7 +774,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                     }
                 }
                 if (shouldParkAfterFailedAcquire(p, node) &&
-                        parkAndCheckInterrupt())
+                    parkAndCheckInterrupt())
                     interrupted = true;
             }
         } finally {
@@ -805,7 +805,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                     }
                 }
                 if (shouldParkAfterFailedAcquire(p, node) &&
-                        parkAndCheckInterrupt())
+                    parkAndCheckInterrupt())
                     throw new InterruptedException();
             }
         } finally {
@@ -844,7 +844,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                 if (nanosTimeout <= 0L)
                     return false;
                 if (shouldParkAfterFailedAcquire(p, node) &&
-                        nanosTimeout > spinForTimeoutThreshold)
+                    nanosTimeout > spinForTimeoutThreshold)
                     LockSupport.parkNanos(this, nanosTimeout);
                 if (Thread.interrupted())
                     throw new InterruptedException();
@@ -1072,7 +1072,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
         if (Thread.interrupted())
             throw new InterruptedException();
         return tryAcquire(arg) ||
-                doAcquireNanos(arg, nanosTimeout);
+               doAcquireNanos(arg, nanosTimeout);
     }
 
     /**
@@ -1154,7 +1154,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
         if (Thread.interrupted())
             throw new InterruptedException();
         return tryAcquireShared(arg) >= 0 ||
-                doAcquireSharedNanos(arg, nanosTimeout);
+               doAcquireSharedNanos(arg, nanosTimeout);
     }
 
     /**
@@ -1235,9 +1235,9 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
         Node h, s;
         Thread st;
         if (((h = head) != null && (s = h.next) != null &&
-                s.prev == head && (st = s.thread) != null) ||
-                ((h = head) != null && (s = h.next) != null &&
-                        s.prev == head && (st = s.thread) != null))
+             s.prev == head && (st = s.thread) != null) ||
+            ((h = head) != null && (s = h.next) != null &&
+             s.prev == head && (st = s.thread) != null))
             return st;
 
         /*
@@ -1290,9 +1290,9 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
     final boolean apparentlyFirstQueuedIsExclusive() {
         Node h, s;
         return (h = head) != null &&
-                (s = h.next) != null &&
-                !s.isShared() &&
-                s.thread != null;
+               (s = h.next) != null &&
+               !s.isShared() &&
+               s.thread != null;
     }
 
     /**
@@ -1452,7 +1452,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
         int s = getState();
         String q = hasQueuedThreads() ? "non" : "";
         return super.toString() +
-                "[State = " + s + ", " + q + "empty queue]";
+               "[State = " + s + ", " + q + "empty queue]";
     }
 
 
@@ -1720,7 +1720,7 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
                     lastWaiter = null;
                 first.nextWaiter = null;
             } while (!transferForSignal(first) &&
-                    (first = firstWaiter) != null);
+                     (first = firstWaiter) != null);
         }
 
         /**
@@ -2108,7 +2108,8 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
      * are at it, we do the same for other CASable fields (which could
      * otherwise be done with atomic field updaters).
      */
-    private static final Unsafe unsafe = Unsafe.getUnsafe();
+    // private static final Unsafe unsafe = Unsafe.getUnsafe();
+    private static final Unsafe unsafe;
     private static final long stateOffset;
     private static final long headOffset;
     private static final long tailOffset;
@@ -2116,6 +2117,15 @@ public abstract class Aqs extends AbstractOwnableSynchronizer
     private static final long nextOffset;
 
     static {
+
+        try {
+            java.lang.reflect.Field singleoneInstanceField = Unsafe.class.getDeclaredField("theUnsafe");
+            singleoneInstanceField.setAccessible(true);
+            unsafe = (Unsafe) singleoneInstanceField.get(null);
+        } catch (Exception e) {
+            throw new RuntimeException("Unable to obtain Unsafe instance", e);
+        }
+
         try {
             stateOffset = unsafe.objectFieldOffset
                     (Aqs.class.getDeclaredField("state"));
